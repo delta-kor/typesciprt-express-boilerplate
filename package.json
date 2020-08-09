@@ -1,0 +1,9 @@
+{
+  "name": "typescript-express-boilerplate",
+  "version": "1.0.0",
+  "description": "typescript express boilerplate",
+  "main": "dist/app.js",
+  "repository": "https://github.com/delta-kor/typesciprt-express-boilerplate.git",
+  "author": "delta-kor <deltakbot1@gmail.com>",
+  "license": "MIT"
+}
