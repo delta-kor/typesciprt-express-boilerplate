@@ -7,17 +7,20 @@
   "author": "delta-kor <deltakbot1@gmail.com>",
   "scripts": {
     "dev": "nodemon --watch src -e * --exec yarn start",
-    "build": "tsc",
+    "build": "tsc -p .",
     "deploy": "node .",
     "start": "yarn build && yarn deploy"
   },
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mustache": "^4.0.1"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
-    "@types/express": "^4.17.7"
+    "@types/express": "^4.17.7",
+    "@types/mustache": "^4.0.1",
+    "@types/node": "^14.0.27"
   }
 }
