@@ -14,7 +14,7 @@ export class ExceptionController {
             return false;
         } else {
             res.status(500);
-            res.render('error.html');
+            res.render('error.pug');
             return false;
         }
     }
@@ -30,7 +30,7 @@ export class ExceptionController {
             return false;
         } else {
             res.status(404);
-            res.render('notFound.html');
+            res.render('notFound.pug');
             return false;
         }
     }
