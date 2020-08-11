@@ -1,0 +1,6 @@
+#menu > .item > a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
