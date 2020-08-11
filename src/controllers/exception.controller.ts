@@ -20,8 +20,19 @@ export class ExceptionController {
     }
 
     static notFound(req: Request, res: Response): any {
-        res.render('notFound.html');
-        return false;
+        if(req.xhr) {
+            res.status(404);
+            res.json({
+                resolved: false,
+                status: -404,
+                message: 'Page not found'
+            });
+            return false;
+        } else {
+            res.status(404);
+            res.render('notFound.html');
+            return false;
+        }
     }
 
 }
