@@ -1,0 +1,13 @@
+include components/todo.item.pug
+
+head
+    meta(charset='UTF-8')
+    title My Homepage
+    link(rel='stylesheet' href='/style/menu.css')
+
+h1 Todo
+
+#todo
+    ul.list
+        each todo in todos
+            +todoItem(todo)

@@ -1,7 +1,7 @@
 export interface Todo {
     id: number;
     content: string;
-    isFinished: boolean;
+    finished: boolean;
 }
 
 class TodoService {
@@ -13,27 +13,27 @@ class TodoService {
             {
                 id: 0,
                 content: 'Bake cookies',
-                isFinished: true
+                finished: true
             },
             {
                 id: 1,
                 content: 'See the doctor',
-                isFinished: true
+                finished: true
             },
             {
                 id: 2,
                 content: 'Go shopping',
-                isFinished: false
+                finished: false
             },
             {
                 id: 3,
                 content: 'Do laundry',
-                isFinished: false
+                finished: false
             },
             {
                 id: 4,
                 content: 'Learn angular',
-                isFinished: false
+                finished: false
             },
         ];
     }
