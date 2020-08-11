@@ -4,6 +4,7 @@ import * as cookieParser from 'cookie-parser';
 import * as mustache from 'mustache';
 import { router as ApiRouter } from './routes/api';
 import { router as WebRouter } from './routes/web';
+import { router as ExceptionRouter } from './routes/exception';
 
 export class Server {
 
@@ -38,6 +39,7 @@ export class Server {
     private mountRoutes(): void {
         this.application.use('/api', ApiRouter);
         this.application.use(WebRouter);
+        this.application.use(ExceptionRouter);
     }
 
     listen(onStart?: (port: number) => void): void {
