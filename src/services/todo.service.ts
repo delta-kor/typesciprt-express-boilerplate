@@ -44,6 +44,15 @@ class TodoService {
         return [...this.todos.values()];
     }
 
+    toggle(id: number): boolean | null {
+        const todo = this.todos.get(id);
+        if(!todo) return null;
+
+        const finished: boolean = todo.finished;
+        todo.finished = !finished;
+        return !finished;
+    }
+
 }
 
 const todoService = new TodoService();
