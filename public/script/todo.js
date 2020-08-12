@@ -4,6 +4,7 @@ async function refresh() {
         const data = await response.json();
         if(data.status !== 0) throw new Error(`Todo fetching failed. Status : ${data.status}`);
         render(data.result);
+        alert('Refresh completed');
         return true;
     } catch(e) {
         console.error(`Refresh failed. ${e}`);

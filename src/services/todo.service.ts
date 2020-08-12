@@ -6,10 +6,10 @@ export interface Todo {
 
 class TodoService {
 
-    private todos: Todo[];
+    private todos: Map<number, Todo>;
 
     constructor() {
-        this.todos = [
+        const todos = [
             {
                 id: 0,
                 content: 'Bake cookies',
@@ -36,10 +36,12 @@ class TodoService {
                 finished: false
             },
         ];
+        this.todos = new Map();
+        for(let todo of todos) this.todos.set(todo.id, todo);
     }
 
     getTodos(): Todo[] {
-        return this.todos;
+        return [...this.todos.values()];
     }
 
 }
