@@ -8,6 +8,9 @@ head
 h1 Todo
 
 #todo
+    button.refresh refresh
     ul.list
         each todo in todos
             +todoItem(todo)
+
+script(src='/script/todo.js')

@@ -8,7 +8,7 @@ export class TodoController {
         res.json({
             resolved: true,
             status: 0,
-            data: todos
+            result: todos
         });
         return true;
     }
