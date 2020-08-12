@@ -1,5 +1,10 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 
+export enum ExceptionStatus {
+    NOT_FOUND = -1000,
+    ERROR = -2000
+}
+
 export class ExceptionController {
 
     static exception(err: ErrorRequestHandler, req: Request, res: Response, next: NextFunction): any {
@@ -8,7 +13,7 @@ export class ExceptionController {
             res.status(500);
             res.json({
                 resolved: false,
-                status: -500,
+                status: ExceptionStatus.ERROR,
                 message: 'Internal server error'
             });
             return false;
@@ -24,7 +29,7 @@ export class ExceptionController {
             res.status(404);
             res.json({
                 resolved: false,
-                status: -404,
+                status: ExceptionStatus.NOT_FOUND,
                 message: 'Page not found'
             });
             return false;

@@ -1,5 +1,5 @@
 mixin todoItem(todo)
-    li(data-id=todo.id)
+    li
         label
-            input(type='checkbox' checked=todo.finished)
+            input(type='checkbox' checked=todo.finished data-id=todo.id)
             p= todo.content
