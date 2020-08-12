@@ -48,6 +48,23 @@ export class TodoController {
             });
             return true;
         }
+        if(data.type === 'content') {
+            const result = todoService.content(data.id, <string>data.content);
+            if(!result) {
+                res.json({
+                    resolved: false,
+                    status: PatchTodoStatus.INVALID_ID,
+                    message: 'Id not found'
+                });
+                return false;
+            }
+            res.json({
+                resolved: true,
+                status: PatchTodoStatus.SUCCESS,
+                result: data.content
+            });
+            return true;
+        }
         res.json({
             resolved: false,
             status: PatchTodoStatus.INVALID_TYPE,

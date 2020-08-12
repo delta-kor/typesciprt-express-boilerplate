@@ -1,5 +1,6 @@
 mixin todoItem(todo)
-    li
+    li(data-id=todo.id)
         label
-            input(type='checkbox' checked=todo.finished data-id=todo.id)
+            input(type='checkbox' checked=todo.finished)
+            button Edit
             p= todo.content

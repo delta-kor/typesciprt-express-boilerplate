@@ -53,6 +53,14 @@ class TodoService {
         return !finished;
     }
 
+    content(id: number, content: string): string | null {
+        const todo = this.todos.get(id);
+        if(!todo) return null;
+
+        todo.content = content;
+        return content;
+    }
+
 }
 
 const todoService = new TodoService();

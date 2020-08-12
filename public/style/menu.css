@@ -2,6 +2,10 @@
     margin: 4px 0 4px 8px;
 }
 
+#todo > .list > li button {
+    margin: 0 4px 0 8px;
+}
+
 #todo > .list > li p {
     display: inline-block;
     margin: 0 0 0 8px;
