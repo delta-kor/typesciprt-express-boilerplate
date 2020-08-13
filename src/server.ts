@@ -1,3 +1,4 @@
+import * as http from 'http';
 import * as express from 'express';
 import * as cookieParser from 'cookie-parser';
 import { router as ApiRouter } from './routes/api';
@@ -6,11 +7,13 @@ import { router as ExceptionRouter, exception } from './routes/exception';
 
 export class Server {
 
-    public application: express.Application;
+    private application: express.Application;
+    private server: http.Server;
     public port: number;
 
     constructor(port: number = 3000) {
         this.application = express();
+        this.server = http.createServer(this.application);
         this.port = port;
         this.mount();
     }
@@ -37,7 +40,8 @@ export class Server {
     }
 
     listen(onStart?: (port: number) => void): void {
-        this.application.listen(this.port, onStart);
+        this.server.listen(this.port);
+        onStart && onStart(this.port);
     }
 
 }
